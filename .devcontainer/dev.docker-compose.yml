@@ -1,0 +1,41 @@
+version: '3.3'
+
+services:
+  server:
+    build:
+      context: ".."
+      dockerfile: "Dockerfile"
+    env_file:
+      - .dev.env
+    # links:
+    #   - postgres
+    volumes:
+      - ../:/workspace
+    entrypoint:
+      - sleep
+      - infinity
+    ports:
+      - 3839:3839
+
+
+  # postgres:
+  #   image: postgres:13.2
+  #   restart: always
+  #   env_file:
+  #     - .dev.env
+  #   environment:
+  #     - POSTGRES_PASSWORD=laronge_test
+  #   volumes:
+  #     - ../migrations:/docker-entrypoint-initdb.d:ro
+  #     - ../back-ups:/back-ups
+  #   #   - ./postgres:/etc/postgresql-myconfig
+  #   # entrypoint:
+  #   #   - cat /etc/postgresql-myconfig/postgresql.conf >> /var/lib/postgresql/data/postgresql.conf
+  #   ports:
+  #     - 5433:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080

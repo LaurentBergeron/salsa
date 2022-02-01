@@ -1,0 +1,21 @@
+function start {
+  python src/manage.py runserver
+}
+
+function bat {
+  echo 'not implemented'
+}
+
+function st {
+  git status
+}
+
+function gp {
+  git push
+}
+
+alias fu="git commit -m"
+
+git config --global alias.co checkout
+
+alias django="python -m django"

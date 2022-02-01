@@ -1,0 +1,14 @@
+{
+  "dockerComposeFile": "dev.docker-compose.yml",
+	"service": "server",
+	"workspaceFolder": "/workspace",
+	"postCreateCommand": "cat /workspace/.devcontainer/.mybashrc >> ~/.bashrc",
+	"extensions": [
+		"wmaurer.change-case",
+		"dbankier.vscode-quick-select",
+		"tomoki1207.vscode-input-sequence",
+		"maptz.camelcasenavigation",
+		"eamodio.gitlens",
+		"ms-python.python"
+	]
+}
